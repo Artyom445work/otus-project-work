@@ -1,5 +1,5 @@
 import React from 'react'
-import { useCart } from '../context/CartContext'
+import { useCart } from '../hooks/useCart'
 
 export const Cart: React.FC = () => {
     const { cart, removeFromCart } = useCart()

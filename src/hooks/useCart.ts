@@ -11,7 +11,6 @@ export const useCart = () => {
     const [cart, setCart] = useState<CartItem[]>([])
 
     const addToCart = (product: any) => {
-        console.log('Adding product to cart:', product)
         const existingItem = cart.find((item) => item.id === product.id)
         if (existingItem) {
             setCart(
