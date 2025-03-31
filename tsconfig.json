@@ -1,0 +1,16 @@
+{
+  "compilerOptions": {
+    "types": ["node", "jest", "@testing-library/jest-dom", "@testing-library/react"],
+    "target": "ES6",
+    "module": "ESNext",
+    "strict": true,
+    "jsx": "react-jsx",
+    "moduleResolution": "node",
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "outDir": "./dist"
+  },
+  "include": ["src/**/*", "./setupTests.ts"],
+  "exclude": ["node_modules"]
+}
