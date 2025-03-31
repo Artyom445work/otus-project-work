@@ -1,18 +1,9 @@
 import React from 'react'
+import { useCart } from '../context/CartContext'
 
-interface CartItem {
-    id: number
-    name: string
-    price: number
-    quantity: number
-}
+export const Cart: React.FC = () => {
+    const { cart, removeFromCart } = useCart()
 
-interface CartProps {
-    cart: CartItem[]
-    onRemoveFromCart: (id: number) => void
-}
-
-export const Cart: React.FC<CartProps> = ({ cart, onRemoveFromCart }) => {
     const totalPrice = cart.reduce((sum, item) => sum + item.price * item.quantity, 0)
 
     return (
@@ -27,7 +18,7 @@ export const Cart: React.FC<CartProps> = ({ cart, onRemoveFromCart }) => {
               <span>
                 {item.name} x{item.quantity} - ${item.price.toFixed(2)}
               </span>
-                            <button onClick={() => onRemoveFromCart(item.id)}>Remove</button>
+                            <button onClick={() => removeFromCart(item.id)}>Remove</button>
                         </div>
                     ))}
                     <h3>Total: ${totalPrice.toFixed(2)}</h3>
