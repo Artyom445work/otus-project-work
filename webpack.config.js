@@ -1,4 +1,5 @@
-const path = require('path');
+const path = require('path')
+const HtmlWebpackPlugin = require('html-webpack-plugin')
 
 module.exports = {
     entry: './src/index.tsx',
@@ -28,10 +29,16 @@ module.exports = {
             },
         ],
     },
+    plugins: [
+        new HtmlWebpackPlugin({
+            template: './public/index.html', // Шаблон HTML-файла
+            filename: 'index.html', // Имя выходного файла
+        }),
+    ],
     devServer: {
         static: path.join(__dirname, 'public'),
         compress: true,
         port: 3000,
         historyApiFallback: true,
     },
-};
+}
